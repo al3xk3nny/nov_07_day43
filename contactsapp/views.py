@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, HttpResponse, redirect, get_object_or_404
 from .models import Contact
 from .forms import ContactForm
 
@@ -23,7 +23,7 @@ def add_contact(request):
     
 
 def edit_contact(request, id):
-    contact = Contact.objects.get(pk=id)
+    contact = get_object_or_404(Contact, pk=id)
     if request.method == "POST":
         form = ContactForm(request.POST, instance=contact)
         form.save()
