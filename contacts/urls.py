@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from contactsapp.views import say_hello, add_contact, add_contact_confirm, edit_contact
+from contactsapp.views import say_hello, add_contact, edit_contact
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", say_hello),
     path("add_contact/", add_contact, name="add_contact"),
-    path("add_contact/confirm/", add_contact_confirm, name="add_contact_confirm"),
     path("edit_contact/<int:id>/", edit_contact, name="edit_contact"),
 ]

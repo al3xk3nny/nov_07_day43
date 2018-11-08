@@ -10,6 +10,7 @@
     
     <h1>Contacts App</h1>
     
+    <!--# URL (edit_contact) matches the "name" referenced in the urls.py file.-->
     {% for contact in contacts %}
         <p>{{ contact }} - <a href="{% url 'edit_contact' contact.id %}">edit</a></p>
     {% endfor %}
